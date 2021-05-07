@@ -1,0 +1,25 @@
+.div1-true{
+  font-family: sans-serif;
+}
+
+.div1-false{
+  font-family: fantasy;
+}
+
+.div2-true{
+  background-color: black;
+  color : white;
+}
+
+.div2-false{
+  background-color: white;
+  color : black;
+}
+
+.div3-true{
+  color: black;
+}
+
+.div3-false{
+  color: green;
+}

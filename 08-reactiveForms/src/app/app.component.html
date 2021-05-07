@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <h2>Registro de Usuarios</h2>
+    <form [formGroup]="registrationForm">
+      <div class="form-group">
+        <label for="usuario">Nombre de Usuario</label>
+        <input [class.is-invalid]="userName.invalid && userName.touched" formControlName="userName" type="text" class="form-control" id="usuario" placeholder="">
+        <div *ngIf="userName.invalid && userName.touched">
+          <small *ngIf="userName.errors?.required" class="text-danger">El campo es requerido</small>
+          <small *ngIf="userName.errors?.minlength" class="text-danger">El nombre tiene que ser mayor a 3 caracteres</small>
+          <small *ngIf="userName.errors?.noPermitido" class="text-danger">Este Nombre no es permitido</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input formControlName="password" type="password" class="form-control" id="contrasena" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="confirmarContrasena">Confirmar Contraseña</label>
+        <input [class.is-invalid]="registrationForm.errors?.encontrado && registrationForm.get('confirmPassword').touched" formControlName="confirmPassword" type="password" class="form-control" id="confirmarContrasena" placeholder="">
+        <small *ngIf="registrationForm.errors?.encontrado && registrationForm.get('confirmPassword').touched" class="text-danger">La contraseña no coincide</small>
+      </div>
+      <div formGroupName="address">
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input formControlName="city" type="text" class="form-control" id="ciudad" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado</label>
+          <input formControlName="state" type="text" class="form-control" id="estado" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="postal">Codigo Postal</label>
+          <input formControlName="postalCode" type="text" class="form-control" id="postal" placeholder="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addAlternativeEmail()">Añadir un nuevo Email</button>
+        <div formArrayName="alternativeEmails" *ngFor="let email of alternativeEmails.controls; let i = index">
+          <input type="email" class="form-control my-1" formControlName="i">
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Registrar</button>
+      <button class="btn btn-secondary ml-2" type="button" (click)="load()">Load</button>
+  </form>
+  {{registrationForm.value | json}}
+</div>

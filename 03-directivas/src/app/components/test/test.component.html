@@ -1,0 +1,29 @@
+<p *ngIf="false;then bloqueIf else bloqueElse">
+  Asesoftware
+</p>
+
+<ng-template #bloqueIf>
+  <h2>Hola</h2>
+</ng-template>
+
+<ng-template #bloqueElse>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</ng-template>
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Escojiste rojo</div>
+  <div *ngSwitchCase="'blue'">Escojiste Azul</div>
+  <div *ngSwitchCase="'green'">Escojiste Verde</div>
+  <div *ngSwitchDefault>No escojiste ninguno</div>
+</div>
+<ul>
+  <div *ngFor="let item of list; even as i">
+    <div *ngIf="i;then si else no"></div>
+      <ng-template #si>
+          <li [ngStyle]="estilo">{{item.nombre + ' ' +item.apellido}}</li>
+      </ng-template>
+      <ng-template #no>
+        <li>{{item.nombre + ' ' +item.apellido}}</li>
+      </ng-template>
+  </div>
+</ul>

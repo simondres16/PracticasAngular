@@ -1,0 +1,7 @@
+<ul class="items">
+  <li [class.selected] = "estaSeleccionado(departamento.id)" (click)="navegar(departamento.id)" *ngFor="let departamento of departamentos">
+    <span class="badge">{{departamento.id}}</span>
+    {{departamento.nombre}}
+  </li>
+</ul>
+{{idSeleccionado}}

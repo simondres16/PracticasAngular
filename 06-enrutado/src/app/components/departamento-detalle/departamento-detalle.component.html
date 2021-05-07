@@ -1,0 +1,15 @@
+<div class="">
+  <h2>Se selecciono el departamento {{idDepartamento}}</h2>
+  <p>
+    <button type="button" (click)="mostrarResumen()">Resumen</button>
+    <button type="button" (click)="mostrarContacto()">Contacto</button>
+  </p>
+  <router-outlet></router-outlet>
+  <p>
+    <button type="button" (click)="irAnterior()">Anterior</button>
+    <button type="button" (click)="irSiguiente()">Siguiente</button>
+  </p>
+  <p>
+    <button type="button" (click) = "irLista()">Volver</button>
+  </p>
+</div>

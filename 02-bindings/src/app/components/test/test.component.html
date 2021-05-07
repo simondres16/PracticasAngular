@@ -1,0 +1,37 @@
+<div [ngClass]="div1Clase">
+  <h2>Div 1</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <button type="button" (click)="cambiarDiv1()">Dame click :3</button>
+</div>
+
+<div [ngClass]="div2Clase">
+  <h2>Div 2</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <button type="button" (click)="cambiarDiv2()">Dame click :3</button>
+</div>
+
+<div [ngClass]="div3Clase">
+  <h2>Div 3</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <button type="button" (click)="cambiarDiv3()">Dame click :3</button>
+</div>
+
+<div [ngStyle]="estilo">
+  <h2>Div 3</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <!-- <button type="button" (click)="cambiarDiv3()">Dame click :3</button> -->
+</div>
+
+<hr>
+
+<div class="">
+  <p>{{texto}}</p>
+  <button type="button" (click)="saludo($event)">Presioname</button>
+</div>
+
+<hr>
+<input #Nombre type="text">
+<button (click)="saludo(Nombre.value)">Saludo</button>
+<hr>
+<input type="text" [(ngModel)]="Texto">
+<p>{{Texto}}</p>

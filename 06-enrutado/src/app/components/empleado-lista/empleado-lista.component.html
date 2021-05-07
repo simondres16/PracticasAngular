@@ -1,0 +1,20 @@
+<h2>{{nombre}}</h2>
+
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Ver Mas</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{empleado.id}}</td>
+      <td>{{empleado.nombre}}</td>
+      <td>{{empleado.apellido}}</td>
+      <td>
+        <button type="button" (click)="verMas(empleado)">Ver mas</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

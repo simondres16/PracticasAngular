@@ -1,0 +1,15 @@
+<h2>Lista de estudiantes</h2>
+<div class="table-table-responsive">
+  <table class="table">
+    <tr class="thead-dark">
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+    </tr>
+    <tr *ngFor="let estudiante of estudiantes">
+      <td>{{estudiante.id}}</td>
+      <td>{{estudiante.nombre | titlecase}}</td>
+      <td>{{estudiante.apellido | titlecase}}</td>
+    </tr>
+  </table>
+</div>
